@@ -13,7 +13,6 @@ var timesheetApp = angular.module('timesheetApp', [])
         $rootScope.totalHours = 0;
         $rootScope.staffs = window.staffs;
         $rootScope.shifts = window.shifts;
-        console.log(window.bs_staffs);
         if ($rootScope.curDate.weekday() >= 4) {
             iStart = 4;
             iEnd = 10;
