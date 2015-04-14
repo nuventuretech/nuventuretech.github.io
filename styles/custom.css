@@ -1,0 +1,7 @@
+/* for keeping the select2 text aligned propery for bootsrap styling compliance */
+a.select2-choice{
+  height: 35px !important;
+  span{
+   padding-top: 4px;
+  }
+}

@@ -37,10 +37,15 @@ var timesheetApp = angular.module('timesheetApp', [])
     });
 
 timesheetApp.controller('GridCtrl', function($scope, $rootScope) {
-
+    $scope.centreData = window.centres;
+    $scope.centreOnChange = function(){
+        console.log('handler to filter data based on centre selection');
+        console.log($scope.selectedCentre);
+    }
 });
 
 timesheetApp.controller('StaffCtrl', function($scope, $rootScope) {
+    $scope.centres = window.centres
     var templist;
     $scope.totalStaffHours = 0;
     $scope.staffWithShifts = _.filter($rootScope.staffs, function(staff) {
@@ -59,5 +64,18 @@ timesheetApp.controller('StaffCtrl', function($scope, $rootScope) {
         }
         $scope.staffShiftMatrix[$scope.staffWithShifts[staff].id] = templist;
     }
+    $scope.clickToAddTime = function(staff_id, type, date){
+        $scope.selected_staff_id = staff_id
+        $scope.selected_date = date
+    }
+    $scope.isThisCellSelected=function(staff_id, date){
+        return $scope.selected_staff_id===staff_id && $scope.selected_date===date ;
+    }
     window.tempstore = $scope.staffShiftMatrix;
+});
+
+$(document).ready(function(){
+    $("#mySel").select2({
+        // more select2 options
+    });
 });
