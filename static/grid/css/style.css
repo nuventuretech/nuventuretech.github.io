@@ -238,7 +238,7 @@ html, body {
     /*width:100%;*/
 }
 .badge-box img{ border-radius:360px;padding:0px; width:24px;margin-left:4px;color:#eee;}
-        
+
 .time-range{
     width:100%;
     min-width:100%;
@@ -289,4 +289,11 @@ td button#notes{
 .padding10{
     padding: 10px;
 
+}
+/* for keeping the select2 text aligned propery for bootsrap styling compliance */
+a.select2-choice{
+  height: 35px !important;
+  span{
+   padding-top: 4px;
+  }
 }
